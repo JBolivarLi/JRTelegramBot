@@ -22,13 +22,14 @@ The workflow of finding new posts and send them to subscribers can be viewed her
 ## Deployment
 Deployment process as easy as possible:
 Required software:
-- terminal for running bash scripts
+- terminal for running 
 - docker
 - docker-compose
 
-to deploy application, switch to needed branch and run bash script:
+to deploy application, switch to needed branch and run 
+docker-compose up --build -d
 
-$ bash start.sh ${bot_username} ${bot_token}
+
 
 That's all.
 
