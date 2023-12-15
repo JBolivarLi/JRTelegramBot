@@ -1,6 +1,8 @@
 package com.github.JBolivarLi.javarushtelegrambot.bot.bot;
 import com.github.JBolivarLi.javarushtelegrambot.bot.command.CommandContainer;
 import com.github.JBolivarLi.javarushtelegrambot.bot.service.SendBotMessageServiceImpl;
+import com.github.JBolivarLi.javarushtelegrambot.bot.service.TelegramUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -26,13 +28,13 @@ public class JavarushTelegramBot extends TelegramLongPollingBot {
     public String getBotToken() {
         return token;
     }
-
-
     private final CommandContainer commandContainer;
-    public JavarushTelegramBot() {
-        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this));
-    }
 
+
+    @Autowired
+    public JavarushTelegramBot(TelegramUserService telegramUserService) {
+        this.commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService);
+    }
     public void onUpdateReceived(Update update) {
         if(update.hasMessage() && update.getMessage().hasText()) {
             String message = update.getMessage().getText().trim();
