@@ -19,13 +19,12 @@ public class HelpCommand implements Command {
 
                     + "Работа с подписками на группы:\n"
                     + "%s - подписаться на группу статей\n"
+                    + "%s - отписаться от группы статей\n"
                     + "%s - получить список групп, на которые подписан\n\n"
 
-                    + "%s - получить помощь в работе со мной\n"
-                    + "%s - получить мою статистику использования\n",
+                    + "%s - получить помощь в работе со мной\n",
             START.getCommandName(), STOP.getCommandName(), ADD_GROUP_SUB.getCommandName(),
-            LIST_GROUP_SUB.getCommandName(), HELP.getCommandName(), STAT.getCommandName());
-
+            DELETE_GROUP_SUB.getCommandName(), LIST_GROUP_SUB.getCommandName(), HELP.getCommandName());
 
 
     public HelpCommand(SendBotMessageService sendBotMessageService) {

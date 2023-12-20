@@ -1,23 +1,24 @@
+package command;
+
 import com.github.JBolivarLi.javarushtelegrambot.bot.command.Command;
-import com.github.JBolivarLi.javarushtelegrambot.bot.command.StartCommand;
 import com.github.JBolivarLi.javarushtelegrambot.bot.command.StopCommand;
 
 import static com.github.JBolivarLi.javarushtelegrambot.bot.command.CommandName.*;
-import static com.github.JBolivarLi.javarushtelegrambot.bot.command.StartCommand.START_MESSAGE;
+import static com.github.JBolivarLi.javarushtelegrambot.bot.command.StopCommand.STOP_MESSAGE;
 
-public class StartCommandTest extends AbstractCommandTest{
+public class StopCommandTest extends AbstractCommandTest{
     @Override
     String getCommandName() {
-        return START.getCommandName();
+        return STOP.getCommandName();
     }
 
     @Override
     String getCommandMessage() {
-        return START_MESSAGE;
+        return STOP_MESSAGE;
     }
 
     @Override
     Command getCommand() {
-        return new StartCommand(sendBotMessageService, telegramUserService);
+        return new StopCommand(sendBotMessageService, telegramUserService);
     }
 }

@@ -1,3 +1,5 @@
+package command;
+
 import com.github.JBolivarLi.javarushtelegrambot.bot.bot.JavarushTelegramBot;
 import com.github.JBolivarLi.javarushtelegrambot.bot.service.SendBotMessageService;
 import com.github.JBolivarLi.javarushtelegrambot.bot.service.SendBotMessageServiceImpl;
