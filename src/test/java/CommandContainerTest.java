@@ -2,6 +2,8 @@ import com.github.JBolivarLi.javarushtelegrambot.bot.command.Command;
 import com.github.JBolivarLi.javarushtelegrambot.bot.command.CommandContainer;
 import com.github.JBolivarLi.javarushtelegrambot.bot.command.CommandName;
 import com.github.JBolivarLi.javarushtelegrambot.bot.command.UnknownCommand;
+import com.github.JBolivarLi.javarushtelegrambot.bot.javarushclient.JavaRushGroupClient;
+import com.github.JBolivarLi.javarushtelegrambot.bot.service.GroupSubService;
 import com.github.JBolivarLi.javarushtelegrambot.bot.service.SendBotMessageService;
 import com.github.JBolivarLi.javarushtelegrambot.bot.service.TelegramUserService;
 import org.junit.jupiter.api.Assertions;
@@ -19,7 +21,9 @@ class CommandContainerTest {
     public void init() {
         SendBotMessageService sendBotMessageService = Mockito.mock(SendBotMessageService.class);
         TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
-        commandContainer = new CommandContainer(sendBotMessageService, telegramUserService);
+        JavaRushGroupClient groupClient = Mockito.mock(JavaRushGroupClient.class);
+        GroupSubService groupSubService = Mockito.mock(GroupSubService.class);
+        commandContainer = new CommandContainer(sendBotMessageService, telegramUserService,groupClient,groupSubService);
     }
     @Test
     public void shouldGetAllTheExistingCommands() {
