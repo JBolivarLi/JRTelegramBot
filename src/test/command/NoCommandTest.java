@@ -1,6 +1,7 @@
+package command;
+
 import com.github.JBolivarLi.javarushtelegrambot.bot.command.Command;
 import com.github.JBolivarLi.javarushtelegrambot.bot.command.NoCommand;
-import org.junit.jupiter.api.DisplayName;
 
 import static com.github.JBolivarLi.javarushtelegrambot.bot.command.CommandName.*;
 import static com.github.JBolivarLi.javarushtelegrambot.bot.command.NoCommand.NO_MESSAGE;

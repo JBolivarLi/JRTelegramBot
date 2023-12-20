@@ -1,3 +1,5 @@
+package command;
+
 import com.github.JBolivarLi.javarushtelegrambot.bot.command.Command;
 import com.github.JBolivarLi.javarushtelegrambot.bot.command.UnknownCommand;
 
