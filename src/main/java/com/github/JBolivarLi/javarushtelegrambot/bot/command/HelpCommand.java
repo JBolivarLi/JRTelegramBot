@@ -10,6 +10,7 @@ public class HelpCommand implements Command {
 
     private final SendBotMessageService sendBotMessageService;
 
+
     public static final String HELP_MESSAGE = String.format("✨Дотупные команды✨\n\n"
 
                     + "Начать\\закончить работу с ботом:\n"
@@ -24,6 +25,8 @@ public class HelpCommand implements Command {
                     + "%s - получить мою статистику использования\n",
             START.getCommandName(), STOP.getCommandName(), ADD_GROUP_SUB.getCommandName(),
             LIST_GROUP_SUB.getCommandName(), HELP.getCommandName(), STAT.getCommandName());
+
+
 
     public HelpCommand(SendBotMessageService sendBotMessageService) {
         this.sendBotMessageService = sendBotMessageService;
