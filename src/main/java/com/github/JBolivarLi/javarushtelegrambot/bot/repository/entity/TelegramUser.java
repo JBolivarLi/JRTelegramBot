@@ -3,6 +3,7 @@ package com.github.JBolivarLi.javarushtelegrambot.bot.repository.entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Telegram User entity.
@@ -17,5 +18,8 @@ public class TelegramUser {
 
     @Column(name = "active")
     private boolean active;
+
+    @ManyToMany(mappedBy = "users", fetch = FetchType.EAGER)
+    private List<GroupSub> groupSubs;
 
 }

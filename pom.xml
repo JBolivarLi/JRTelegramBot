@@ -15,6 +15,8 @@
 	<description>Telegram bot for Javarush from community to community</description>
 	<properties>
 		<java.version>11</java.version>
+		<unirest.version>3.11.01</unirest.version>
+		<apache.commons.version>3.11</apache.commons.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -37,6 +39,11 @@
 			<version>1.18.26</version>
 			<scope>provided</scope>
 		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>${apache.commons.version}</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.flywaydb</groupId>
@@ -50,6 +57,11 @@
 			<groupId>org.telegram</groupId>
 			<artifactId>telegrambots-spring-boot-starter</artifactId>
 			<version>6.8.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.konghq</groupId>
+			<artifactId>unirest-java</artifactId>
+			<version>${unirest.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
