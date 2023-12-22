@@ -3,6 +3,7 @@ package com.github.JBolivarLi.javarushtelegrambot.bot.service;
 import com.github.JBolivarLi.javarushtelegrambot.bot.javarushclient.dto.GroupDiscussionInfo;
 import com.github.JBolivarLi.javarushtelegrambot.bot.repository.entity.GroupSub;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -18,5 +19,6 @@ public interface GroupSubService {
     GroupSub save(GroupSub groupSub);
 
     Optional<GroupSub> findById(Integer id);
+    List<GroupSub> findAll();
 
 }
