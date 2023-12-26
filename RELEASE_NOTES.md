@@ -22,4 +22,8 @@ JRTB-0: added SpringBoot skeleton project
 *   JRTB-4: added ability to send notifications about new articles
 *   JRTB-8: added ability to set inactive telegram user
 *   JRTB-9: added ability to set active user and/or start using it.
+* # Release Notes
+
+## 0.8.0-SNAPSHOT
+*   JRTB-10: extended bot statistics for admins.
 
