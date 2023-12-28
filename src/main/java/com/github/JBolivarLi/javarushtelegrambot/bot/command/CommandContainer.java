@@ -9,7 +9,6 @@ import java.util.Map;
 
 
 import static com.github.JBolivarLi.javarushtelegrambot.bot.command.CommandName.*;
-import static java.util.Objects.nonNull;
 
 public class CommandContainer {
     private final Map<String, Command> commandMap;
@@ -37,7 +36,7 @@ public class CommandContainer {
     }
 
 
-    public Command retrieveCommand(String commandIdentifier, String username) {
+    public Command findCommand(String commandIdentifier, String username) {
         Command orDefault = commandMap.getOrDefault(commandIdentifier, unknownCommand);
 
         if (isAdminCommand(orDefault)) {

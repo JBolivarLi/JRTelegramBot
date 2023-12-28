@@ -5,6 +5,8 @@ import com.github.JBolivarLi.javarushtelegrambot.bot.service.TelegramUserService
 import org.telegram.telegrambots.meta.api.objects.Update;
 import java.util.Optional;
 
+import static com.github.JBolivarLi.javarushtelegrambot.bot.command.CommandUtils.getChatId;
+
 public class StopCommand implements Command {
 
     private final SendBotMessageService sendBotMessageService;
@@ -19,11 +21,11 @@ public class StopCommand implements Command {
 
     @Override
     public void execute(Update update) {
-        telegramUserService.findByChatId(update.getMessage().getChatId().toString())
+        sendBotMessageService.sendMessage(getChatId(update), STOP_MESSAGE);
+        telegramUserService.findByChatId(getChatId(update))
                 .ifPresent(it -> {
                     it.setActive(false);
                     telegramUserService.save(it);
                 });
-        sendBotMessageService.sendMessage(update.getMessage().getChatId().toString(), STOP_MESSAGE);
     }
 }

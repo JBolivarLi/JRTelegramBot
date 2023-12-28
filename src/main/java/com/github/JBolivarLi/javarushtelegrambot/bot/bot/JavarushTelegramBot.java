@@ -5,15 +5,11 @@ import com.github.JBolivarLi.javarushtelegrambot.bot.service.GroupSubService;
 import com.github.JBolivarLi.javarushtelegrambot.bot.service.SendBotMessageServiceImpl;
 import com.github.JBolivarLi.javarushtelegrambot.bot.service.StatisticsService;
 import com.github.JBolivarLi.javarushtelegrambot.bot.service.TelegramUserService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
-import org.telegram.telegrambots.meta.api.methods.send.SendMessage;
 import org.telegram.telegrambots.meta.api.objects.Update;
-import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-import javax.annotation.PostConstruct;
 import java.util.List;
 
 import static com.github.JBolivarLi.javarushtelegrambot.bot.command.CommandName.NO;
@@ -53,9 +49,9 @@ public class JavarushTelegramBot extends TelegramLongPollingBot {
             String username = update.getMessage().getFrom().getUserName();
             if (message.startsWith(COMMAND_PREFIX)){
                 String commandIdentifier = message.split(" ")[0].toLowerCase();
-                commandContainer.retrieveCommand(commandIdentifier,username).execute(update);
+                commandContainer.findCommand(commandIdentifier,username).execute(update);
             } else {
-                commandContainer.retrieveCommand(NO.getCommandName(),username).execute(update);
+                commandContainer.findCommand(NO.getCommandName(),username).execute(update);
                 System.out.println(username);
 
 
